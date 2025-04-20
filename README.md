@@ -1,6 +1,5 @@
 # 🚀 Rocket Avoidance Game
 
-Rocket Avoidance Game 🚀
 An Android game where the player controls a rocket moving between three lanes, trying to dodge falling obstacles. The rocket has limited lives and reacts to collisions with vibrations and sound effects.
 
 Features:
