@@ -37,17 +37,6 @@ Clean and responsive UI with cloud-themed background.
 
 ---
 
-## ⚙️ Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/Rocket-Avoidance-Game.git
-   ```
-2. Open with Android Studio
-3. Run on an emulator or physical device
-
----
-
 ## 🧱 Tech Stack
 
 - Kotlin
