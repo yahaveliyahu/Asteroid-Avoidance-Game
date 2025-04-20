@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HW1</string>
+
+    <string name="left_button_desc">Move Left</string>
+    <string name="right_button_desc">Move Right</string>
+
+</resources>

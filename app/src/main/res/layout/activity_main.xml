@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <!-- 🌥️ רקע עננים -->
+    <ImageView
+        android:id="@+id/background_clouds"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cloud_background" />
+
+    <!--linear layout compat עוטף את שלושת הלבבות-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="@dimen/heart_layout_width"
+        android:layout_height="@dimen/heart_dimens"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginRight="@dimen/default_margin"
+        android:orientation="horizontal">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_heart0"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/heart_dimens"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/heart" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_heart1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/heart_dimens"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="@dimen/heart_margins"
+            app:srcCompat="@drawable/heart" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_heart2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/heart_dimens"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/heart" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!-- כפתורים להזזה -->
+    <!-- כפתור שמאלי -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/main_btn_left"
+        android:layout_width="@dimen/default_width"
+        android:layout_height="@dimen/default_height"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/left_btn_margin"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/left_button_desc"
+        android:elevation="10dp"
+        app:icon="@drawable/arrow_left"
+        app:iconSize="@dimen/size_btn"
+        app:iconTint="@android:color/black" />
+
+    <!-- כפתור ימני -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/main_btn_right"
+        android:layout_width="@dimen/default_width"
+        android:layout_height="@dimen/default_height"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/default_margin"
+        android:background="@android:color/transparent"
+        app:icon="@drawable/arrow_right"
+        app:iconSize="@dimen/size_btn"
+        app:iconTint="@android:color/black"
+        android:elevation="10dp"
+        android:contentDescription="@string/right_button_desc"/>
+
+    <!-- החללית -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/main_IMG_rocket"
+        android:layout_width="@dimen/size_rocket"
+        android:layout_height="@dimen/size_rocket"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:elevation="10dp"
+        android:src="@drawable/rocket" />
+
+</RelativeLayout>
+    <!-- התפקיד של contentDescription לאפשר לבעלי לקויי ראיה לדעת מה התפקיד של הכפתור -->
