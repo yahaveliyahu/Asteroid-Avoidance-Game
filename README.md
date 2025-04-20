@@ -2,17 +2,6 @@
 
 An Android game where the player controls a rocket moving between three lanes, trying to dodge falling obstacles. The rocket has limited lives and reacts to collisions with vibrations and sound effects.
 
-Features:
-
-Smooth rocket movement between lanes with arrow buttons.
-
-Randomly generated obstacles falling down the screen.
-
-Hit detection with life management.
-
-Crash sound and vibration feedback on collisions.
-
-Clean and responsive UI with cloud-themed background.
 ---
 
 ## 🎮 Gameplay Features
@@ -22,7 +11,7 @@ Clean and responsive UI with cloud-themed background.
 - Randomly falling obstacles
 - Collision detection with life system
 - Vibration and sound effects on hit
-- Cloud-themed animated background
+- Clean and responsive UI with cloud-themed background.
 
 ---
 
