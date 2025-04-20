@@ -17,8 +17,7 @@ An Android game where the player controls a rocket moving between three lanes, t
 
 ## 🎮 Watch the Game in Action
 
-📁 The gameplay video is available in this repository.  
-📥 [Download and watch gameplay_preview.mp4](./gameplay_preview.mp4)
+▶️ [Click here to watch the gameplay video](https://streamable.com/n4odba)
 
 ---
 
