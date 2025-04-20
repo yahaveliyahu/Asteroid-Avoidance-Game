@@ -2,16 +2,16 @@ package dev.yahaveliyahu.hw1.utillities
 
 object Constants {
 
-    // מהירות המשחק (הפרש בין טיקים בלופ הראשי)
+    // Game speed (difference between ticks in the main loop)
     const val GAME_SPEED: Long = 1_000L
 
-    // מספר לבבות התחלתי
+    // Starting number of hearts
     const val INITIAL_LIVES = 3
 
-    // מספר עמודות בלוח המשחק
+    // Number of columns on the game board
     const val NUM_LANES = 3
 
-    // קואורדינטות התחלתיות של הרכב
-    const val START_LANE = 0 // באמצע (1,0,1-)
+    // Initial coordinates of the rocket
+    const val START_LANE = 0 // In the middle (-1,0,1)
 
 }

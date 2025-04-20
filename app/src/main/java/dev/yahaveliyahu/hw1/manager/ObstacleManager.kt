@@ -13,7 +13,7 @@ import dev.yahaveliyahu.hw1.utillities.Constants
 
 object ObstacleManager {
     private val stones = mutableListOf<AppCompatImageView>()
-    private const val FALL_SPEED = 100f // מספר פיקסלים שכל אבן יורדת בכל טיק
+    private const val FALL_SPEED = 100f // Number of pixels each stone moves down each tick
 
     fun updateObstacles(context: Context, game: GameManager, player: RocketPlayer) {
         val iterator = stones.iterator()
@@ -33,14 +33,14 @@ object ObstacleManager {
                 (stone.parent as? ViewGroup)?.removeView(stone)
                 iterator.remove()
 
-                // אם האבן עברה את המסך – ניפטר ממנה
+                // If the stone passed the screen – we get rid of it
             } else if (outOfScreen) {
                 (stone.parent as? ViewGroup)?.removeView(stone)
                 iterator.remove()
             }
         }
 
-        // איפוס המשחק אם נגמרו החיים
+        // Reset the game if you run out of lives
         if (game.isGameOver()) {
             game.reset()
             clearObstacles(context)
@@ -52,7 +52,7 @@ object ObstacleManager {
 
         val layoutWidth = parent.width.toFloat()
         val laneWidth = layoutWidth / Constants.NUM_LANES
-        val numStones = Random.nextInt(1, 3) // בין 1 ל-2 אבנים
+        val numStones = Random.nextInt(1, 3)
         val lanesToUse = (0 until Constants.NUM_LANES).shuffled().take(numStones)
 
         for (lane in lanesToUse) {
@@ -61,7 +61,7 @@ object ObstacleManager {
                 layoutParams = ViewGroup.LayoutParams(150, 150)
 
                 val laneCenterX = (lane + 0.5f) * laneWidth
-                val x = laneCenterX - 75f // חצי מהרוחב של האבן (150/2)
+                val x = laneCenterX - 75f // Half the width of the stone (150/2)
                 translationX = x
                 translationY = 0f
                 tag = "obstacle"

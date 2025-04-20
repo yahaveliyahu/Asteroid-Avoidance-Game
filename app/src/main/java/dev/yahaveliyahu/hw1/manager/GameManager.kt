@@ -29,7 +29,6 @@ class GameManager(private val hearts: Array<AppCompatImageView>) {
             val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
             vibrator?.vibrate(VibrationEffect.createOneShot(300, VibrationEffect.DEFAULT_AMPLITUDE))
         } catch (_: Exception) {
-            // אם אין הרשאה או תמיכה – פשוט לא מרטט
         }
     }
 

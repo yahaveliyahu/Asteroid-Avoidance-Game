@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         rocketImage.post {
             player = RocketPlayer(rocketImage)
-            player.setToStartLane() // ממקם את החללית בדיוק בנתיב האמצעי
+            player.setToStartLane() // Positions the rocket exactly in the middle path
 
             game = GameManager(hearts)
 
@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
 
                 if (spawnCooldown <= 0) {
                     ObstacleManager.spawnObstacle(this@MainActivity)
-                    spawnCooldown = 5 // מרווח זמן בין שורות כל 3 שניות
+                    spawnCooldown = 5
                 } else {
                     spawnCooldown--
                 }
