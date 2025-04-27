@@ -1,37 +1,41 @@
 package dev.yahaveliyahu.hw1.logic
 
 import android.content.Context
+import android.os.Build
 import android.os.VibrationEffect
 import android.os.Vibrator
-import android.view.View
+import android.os.VibratorManager
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageView
-import dev.yahaveliyahu.hw1.utillities.Constants
+import dev.yahaveliyahu.hw1.utillities.Constants.NUM_LANES
+import dev.yahaveliyahu.hw1.utillities.Constants.NUM_ROWS
+import dev.yahaveliyahu.hw1.utillities.Constants.START_LANE
 
 class RocketPlayer(private val rocketView: AppCompatImageView) {
 
-    private var currentLane = Constants.START_LANE.coerceIn(0, Constants.NUM_LANES - 1)
+    private var currentLane = START_LANE.coerceIn(0, NUM_LANES - 1)
+
     fun moveLeft() {
         if (currentLane <= -1) {
             giveFeedback()
             return
         }
-        currentLane = (currentLane - 1).coerceIn(-1, Constants.NUM_LANES - 1)
+        currentLane--
         updateRocketPosition()
     }
 
     fun moveRight() {
-        if (currentLane >= Constants.NUM_LANES - 2) {
+        if (currentLane >= NUM_LANES - 2) {
             giveFeedback()
             return
         }
-        currentLane = (currentLane + 1).coerceIn(0, Constants.NUM_LANES - 1)
+        currentLane++
         updateRocketPosition()
     }
 
     fun setToStartLane() {
-        currentLane = Constants.START_LANE.coerceIn(-1, Constants.NUM_LANES)
+        currentLane = START_LANE.coerceIn(0, NUM_LANES - 1)
         updateRocketPosition()
     }
 
@@ -39,19 +43,36 @@ class RocketPlayer(private val rocketView: AppCompatImageView) {
         rocketView.post {
             val parent = rocketView.parent as? ViewGroup ?: return@post
             val layoutWidth = parent.width.toFloat()
-            val laneWidth = layoutWidth / Constants.NUM_LANES
-            val rocketWidth = rocketView.width
-            val x = currentLane * laneWidth + (laneWidth - rocketWidth) / 2f
-            rocketView.translationX = x
+            val laneWidth = layoutWidth / NUM_LANES
+            val centerX = (currentLane + 0.5f) * laneWidth
+            rocketView.translationX = centerX - rocketView.width / 2f
+
         }
     }
 
     private fun giveFeedback() {
         val context = rocketView.context
         Toast.makeText(context, "There are no more paths in this direction", Toast.LENGTH_SHORT).show()
-        val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
-        vibrator?.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE))
+        try {
+            // Pull VibratorManager (API>=31) or regular Vibrator (API<31)
+            val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                (context.getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as? VibratorManager)
+                    ?.defaultVibrator
+            } else {
+                context.getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
+            }
+            // Vibrate for 100ms if vibrator is present
+            vibrator?.vibrate(
+                VibrationEffect.createOneShot(
+                    100,
+                    VibrationEffect.DEFAULT_AMPLITUDE
+                )
+            )
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
-    fun getView(): View = rocketView
+    // Placing the rocket on the bottom row
+    fun getPosition(): Pair<Int, Int> = Pair(NUM_ROWS - 3, currentLane + 1)
 }

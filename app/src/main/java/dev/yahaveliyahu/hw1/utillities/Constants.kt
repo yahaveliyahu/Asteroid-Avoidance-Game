@@ -2,8 +2,8 @@ package dev.yahaveliyahu.hw1.utillities
 
 object Constants {
 
-    // Game speed (difference between ticks in the main loop)
-    const val GAME_SPEED: Long = 1_000L
+
+    const val GAME_SPEED = 500L
 
     // Starting number of hearts
     const val INITIAL_LIVES = 3
@@ -13,5 +13,10 @@ object Constants {
 
     // Initial coordinates of the rocket
     const val START_LANE = 0 // In the middle (-1,0,1)
+
+    const val NUM_ROWS = 10
+
+    const val NUM_COLS = NUM_LANES
+
 
 }

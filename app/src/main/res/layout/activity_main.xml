@@ -62,7 +62,6 @@
         android:layout_marginBottom="@dimen/default_margin"
         android:background="@android:color/transparent"
         android:contentDescription="@string/left_button_desc"
-        android:elevation="@dimen/default_elevation"
         app:icon="@drawable/arrow_left"
         app:iconSize="@dimen/size_btn"
         app:iconTint="@android:color/black" />
@@ -79,7 +78,6 @@
         app:icon="@drawable/arrow_right"
         app:iconSize="@dimen/size_btn"
         app:iconTint="@android:color/black"
-        android:elevation="@dimen/default_elevation"
         android:contentDescription="@string/right_button_desc"/>
 
     <!-- The Rocket -->
@@ -90,7 +88,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="100dp"
-        android:elevation="@dimen/default_elevation"
         android:src="@drawable/rocket" />
 
 </RelativeLayout>

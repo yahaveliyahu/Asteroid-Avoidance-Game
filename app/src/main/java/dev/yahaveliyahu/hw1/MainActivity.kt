@@ -11,7 +11,7 @@ import dev.yahaveliyahu.hw1.logic.EffectSound
 import dev.yahaveliyahu.hw1.logic.RocketPlayer
 import dev.yahaveliyahu.hw1.manager.GameManager
 import dev.yahaveliyahu.hw1.manager.ObstacleManager
-import dev.yahaveliyahu.hw1.utillities.Constants
+import dev.yahaveliyahu.hw1.utillities.Constants.GAME_SPEED
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -69,33 +69,27 @@ class MainActivity : AppCompatActivity() {
         leftButton.setOnClickListener {
             soundFX.playStep(this)
             player.moveLeft()
-            game.checkCollision(player)
         }
 
         rightButton.setOnClickListener {
             soundFX.playStep(this)
             player.moveRight()
-            game.checkCollision(player)
         }
     }
 
     private fun startGameLoop() {
         lifecycleScope.launch {
-            var ticks = 0
             var spawnCooldown = 0
 
             while (true) {
-                ticks++
                 ObstacleManager.updateObstacles(this@MainActivity, game, player)
-
                 if (spawnCooldown <= 0) {
                     ObstacleManager.spawnObstacle(this@MainActivity)
                     spawnCooldown = 5
                 } else {
                     spawnCooldown--
                 }
-
-                delay(Constants.GAME_SPEED)
+                delay(GAME_SPEED)
             }
         }
     }
