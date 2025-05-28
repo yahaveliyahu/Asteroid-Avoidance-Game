@@ -61,20 +61,29 @@ An Android game where the player controls a rocket moving between five lanes, tr
 
 ├── logic/              # Rocket movement, sound logic
 │   └── RocketPlayer.kt
+
 ├── manager/            # Game logic and obstacle spawning
 │   ├── GameManager.kt
 │   └── ObstacleManager.kt
+
 ├── res/
 │   ├── drawable/       # Graphics: rocket, heart, coins, obstacles
 │   ├── layout/         # XML layouts for all screens
 │   ├── raw/            # Sound files (e.g., crash, coin, boost)
 │   └── values/         # Strings and themes
+
 ├── MainActivity.kt     # Core game loop
+
 ├── MenuActivity.kt     # Entry screen
+
 ├── GameOverActivity.kt # After losing the game
+
 ├── HighScoresActivity.kt # High score screen with fragments
+
 ├── ScoresFragment.kt   # Shows top 10 scores in table
+
 ├── MapFragment.kt      # Displays score locations on map
+
 └── utils/              # Constants and ToastUtil
 
 ---
