@@ -60,10 +60,13 @@ An Android game where the player controls a rocket moving between five lanes, tr
 ## 📂 Project Structure
 
 ├── logic/              # Rocket movement, sound logic
+
 │   └── RocketPlayer.kt
 
 ├── manager/            # Game logic and obstacle spawning
+
 │   ├── GameManager.kt
+
 │   └── ObstacleManager.kt
 
 ├── res/
