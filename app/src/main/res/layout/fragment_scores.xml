@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/screen_padding"
+    >
+
+    <!-- Wrapping the entire table in an outer frame -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/table_outer_border"
+        android:padding="@dimen/default_padding"
+        android:gravity="center_horizontal">
+
+        <!-- Main title -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/high_scores_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/the_record_table_top_ten"
+            android:textSize="@dimen/title_size"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/default_distance_table" />
+
+        <!-- Line below the title -->
+        <View
+            android:layout_width="@dimen/underline_length"
+            android:layout_height="@dimen/underline_thickness"
+            android:layout_marginBottom="@dimen/default_distance_table"
+            android:background="@android:color/black"/>
+
+        <!-- Text box for place name -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/score_LBL_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/text_size_table"
+            android:textColor="@color/text_color"/>
+
+
+        <TableLayout
+            android:id="@+id/high_scores_table"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1,2,3"
+            android:shrinkColumns="1,2,3">
+            <TableRow>
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hashMark"
+                    android:padding="@dimen/default_padding"
+                    android:background="@drawable/cell_border"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="@dimen/default_width"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Name"
+                    android:padding="@dimen/default_padding"
+                    android:background="@drawable/cell_border"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="@dimen/default_width"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Score"
+                    android:padding="@dimen/default_padding"
+                    android:background="@drawable/cell_border"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="@dimen/default_width"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Location"
+                    android:padding="@dimen/default_padding"
+                    android:background="@drawable/cell_border"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+            </TableRow>
+        </TableLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/scores_BTN_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back_to_menu"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_text_top" />
+
+    </LinearLayout>
+</ScrollView>

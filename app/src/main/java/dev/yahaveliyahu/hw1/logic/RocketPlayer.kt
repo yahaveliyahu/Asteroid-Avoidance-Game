@@ -6,18 +6,18 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import android.os.VibratorManager
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageView
 import dev.yahaveliyahu.hw1.utillities.Constants.NUM_LANES
 import dev.yahaveliyahu.hw1.utillities.Constants.NUM_ROWS
 import dev.yahaveliyahu.hw1.utillities.Constants.START_LANE
+import dev.yahaveliyahu.hw1.utillities.ToastUtil.safeToast
 
 class RocketPlayer(private val rocketView: AppCompatImageView) {
 
     private var currentLane = START_LANE.coerceIn(0, NUM_LANES - 1)
 
     fun moveLeft() {
-        if (currentLane <= -1) {
+        if (currentLane <= 0) {
             giveFeedback()
             return
         }
@@ -26,7 +26,7 @@ class RocketPlayer(private val rocketView: AppCompatImageView) {
     }
 
     fun moveRight() {
-        if (currentLane >= NUM_LANES - 2) {
+        if (currentLane >= NUM_LANES - 1) {
             giveFeedback()
             return
         }
@@ -52,7 +52,7 @@ class RocketPlayer(private val rocketView: AppCompatImageView) {
 
     private fun giveFeedback() {
         val context = rocketView.context
-        Toast.makeText(context, "There are no more paths in this direction", Toast.LENGTH_SHORT).show()
+        safeToast(context, "There are no more paths in this direction")
         try {
             // Pull VibratorManager (API>=31) or regular Vibrator (API<31)
             val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -74,5 +74,5 @@ class RocketPlayer(private val rocketView: AppCompatImageView) {
     }
 
     // Placing the rocket on the bottom row
-    fun getPosition(): Pair<Int, Int> = Pair(NUM_ROWS - 3, currentLane + 1)
+    fun getPosition(): Pair<Int, Int> = Pair(NUM_ROWS - 3, currentLane)
 }

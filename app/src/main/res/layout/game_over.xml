@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_over_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameOverActivity"
+    android:background="@color/background_color">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/score_LBL_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/text_size_game_over"
+        android:textStyle="bold"
+        android:gravity="center"
+        tools:text="Status\n000" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/score_BTN_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/score_LBL_score"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/default_margin_button"
+        android:text="@string/play_again_in_the_same_mode" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/score_BTN_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/score_BTN_retry"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/default_margin_button"
+        android:text="@string/back_to_menu" />
+
+</RelativeLayout>

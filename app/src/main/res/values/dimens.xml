@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="default_margin">25dp</dimen>
-    <dimen name="left_btn_margin">10dp</dimen>
-    <dimen name="heart_dimens">40dp</dimen>
     <dimen name="heart_layout_width">140dp</dimen>
-    <dimen name="heart_margins">10dp</dimen>
-
-    <dimen name="default_width">80dp</dimen>
+    <dimen name="heart_dimens">40dp</dimen>
+    <dimen name="default_margin_main">25dp</dimen>
+    <dimen name="default_width">0dp</dimen>
+    <dimen name="default_margins">10dp</dimen>
+    <dimen name="default_width_btn">80dp</dimen>
     <dimen name="default_height">80dp</dimen>
+
     <dimen name="width_margin_rocket">175dp</dimen>
     <dimen name="height_margin_rocket">80dp</dimen>
     <dimen name="size_btn">55dp</dimen>
     <dimen name="size_rocket">150dp</dimen>
+    <dimen name="margin_rocket">100dp</dimen>
+    <dimen name="margin_text">16dp</dimen>
+    <dimen name="text_size">20sp</dimen>
+    <dimen name="margin_text_top">8dp</dimen>
+    <dimen name="default_distance_table">4dp</dimen>
+    <dimen name="max_width">300dp</dimen>
+    <dimen name="default_margin_button">24dp</dimen>
+    <dimen name="default_corner_radius">16dp</dimen>
+    <dimen name="default_margin_top">90dp</dimen>
+    <dimen name="margin_start_boost_btn">150dp</dimen>
+    <dimen name="margin_top_boost_btn">-95dp</dimen>
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="default_padding">8dp</dimen>
+    <dimen name="title_size">24sp</dimen>
+    <dimen name="underline_length">300dp</dimen>
+    <dimen name="underline_thickness">1dp</dimen>
+    <dimen name="text_size_table">16sp</dimen>
+    <dimen name="text_size_game_over">72sp</dimen>
 </resources>

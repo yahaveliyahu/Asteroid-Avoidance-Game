@@ -3,5 +3,31 @@
 
     <string name="left_button_desc">Move Left</string>
     <string name="right_button_desc">Move Right</string>
+    <string name="location">Location</string>
+    <string name="score">Score</string>
+    <string name="name">Name</string>
+    <string name="hashMark">#</string>
+    <string name="Name">Name</string>
+    <string name="Score">Score</string>
+    <string name="Location">Location</string>
+    <string name="the_record_table_top_ten">The record table - TOP TEN</string>
+    <string name="play_with_buttons">Play with Buttons</string>
+    <string name="play_with_sensor">Play with Sensor</string>
+    <string name="view_high_scores">View High Scores</string>
+    <string name="play_again_when_loss">Play Again</string>
+    <string name="play_again">Play Again</string>
+    <string name="back_to_menu">Back to Menu</string>
+    <string name="play_again_in_the_same_mode">Play Again in the same mode</string>
+    <string name="play_again_in_the_same_mode_button">Play again in the same mode</string>
+    <string name="asteroid_avoidance">Asteroid Avoidance</string>
+    <string name="game_over_score">&#10;Game Over!😭&#10;\nYour Score is:&#10;%1$d</string>
+    <string name="score_display">Score: %1$d</string>
+    <string name="distance_display">Distance: %1$d</string>
+    <string name="Initial_score">Score: 0</string>
+    <string name="boost">Boost</string>
+    <string name="Initial_distance">Distance: 0</string>
+    <string name="background_clouds">Game background - clouds</string>
+    <string name="background_space">Menu background - space</string>
+
 
 </resources>

@@ -9,8 +9,17 @@ class BGMusic {
     private var mediaPlayer: MediaPlayer? = null
 
     fun play(context: Context) {
-        mediaPlayer = MediaPlayer.create(context, R.raw.us_sounds)
-        mediaPlayer?.isLooping = true
-        mediaPlayer?.start()
+        if (mediaPlayer == null) {
+            mediaPlayer = MediaPlayer.create(context, R.raw.us_sounds)
+            mediaPlayer?.isLooping = true
+            mediaPlayer?.start()
+        } else if (mediaPlayer?.isPlaying == false) {
+            mediaPlayer?.start()
+        }
+    }
+    fun stop() {
+        mediaPlayer?.stop()
+        mediaPlayer?.release()
+        mediaPlayer = null
     }
 }

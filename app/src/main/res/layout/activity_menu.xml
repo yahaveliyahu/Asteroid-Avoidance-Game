@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- space background  -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/background_clouds"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/space_background"
+        android:contentDescription="@string/background_space"/>
+
+
+    <!-- Game title -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/menu_IMG_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="@dimen/default_distance_table"
+        android:src="@drawable/asteroid_title"
+        android:contentDescription="@string/app_name"
+        android:adjustViewBounds="true"
+        android:maxWidth="@dimen/max_width" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/default_padding">
+
+        <!-- Arrow mode button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/menu_btn_button_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/play_with_buttons"
+            app:cornerRadius="@dimen/default_corner_radius"
+            android:layout_marginTop="@dimen/default_margin_top"
+            />
+
+        <!-- Sensor mode button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/menu_btn_sensor_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_margin_button"
+            android:text="@string/play_with_sensor"
+            app:cornerRadius="@dimen/default_corner_radius" />
+
+        <!-- Button for the records screen -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/menu_btn_high_scores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/view_high_scores"
+            app:cornerRadius="@dimen/default_corner_radius" />
+    </LinearLayout>
+</FrameLayout>
+

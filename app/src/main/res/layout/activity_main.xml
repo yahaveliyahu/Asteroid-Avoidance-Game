@@ -9,12 +9,14 @@
     >
 
     <!-- Clouds background🌥️  -->
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/background_clouds"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/cloud_background" />
+        android:src="@drawable/cloud_background"
+        android:contentDescription="@string/background_clouds"/>
+
 
     <!-- linear layout compat wraps the three hearts -->
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -22,29 +24,29 @@
         android:layout_height="@dimen/heart_dimens"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="@dimen/default_margin"
-        android:layout_marginRight="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin_main"
+        android:layout_marginRight="@dimen/default_margin_main"
         android:orientation="horizontal">
 
 
     <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_heart0"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/default_width"
             android:layout_height="@dimen/heart_dimens"
             android:layout_weight="1"
             app:srcCompat="@drawable/heart" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_heart1"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/default_width"
             android:layout_height="@dimen/heart_dimens"
             android:layout_weight="1"
-            android:layout_marginHorizontal="@dimen/heart_margins"
+            android:layout_marginHorizontal="@dimen/default_margins"
             app:srcCompat="@drawable/heart" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_heart2"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/default_width"
             android:layout_height="@dimen/heart_dimens"
             android:layout_weight="1"
             app:srcCompat="@drawable/heart" />
@@ -54,12 +56,12 @@
     <!-- Left button -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/main_btn_left"
-        android:layout_width="@dimen/default_width"
+        android:layout_width="@dimen/default_width_btn"
         android:layout_height="@dimen/default_height"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="@dimen/left_btn_margin"
-        android:layout_marginBottom="@dimen/default_margin"
+        android:layout_marginStart="@dimen/default_margins"
+        android:layout_marginBottom="@dimen/default_margin_main"
         android:background="@android:color/transparent"
         android:contentDescription="@string/left_button_desc"
         app:icon="@drawable/arrow_left"
@@ -69,16 +71,26 @@
     <!-- Right button -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/main_btn_right"
-        android:layout_width="@dimen/default_width"
+        android:layout_width="@dimen/default_width_btn"
         android:layout_height="@dimen/default_height"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="@dimen/default_margin"
+        android:layout_margin="@dimen/default_margin_main"
         android:background="@android:color/transparent"
         app:icon="@drawable/arrow_right"
         app:iconSize="@dimen/size_btn"
         app:iconTint="@android:color/black"
         android:contentDescription="@string/right_button_desc"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/main_btn_boost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_btn_right"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/margin_start_boost_btn"
+        android:layout_marginTop="@dimen/margin_top_boost_btn"
+        android:text="@string/boost" />
 
     <!-- The Rocket -->
     <androidx.appcompat.widget.AppCompatImageView
@@ -86,9 +98,36 @@
         android:layout_width="@dimen/size_rocket"
         android:layout_height="@dimen/size_rocket"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp"
-        android:src="@drawable/rocket" />
+        android:layout_marginBottom="@dimen/margin_rocket"
+        android:src="@drawable/rocket"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/main_LBL_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/margin_text"
+        android:layout_marginTop="@dimen/margin_text"
+        android:text="@string/Initial_score"
+        android:textSize="@dimen/text_size"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/main_LBL_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_LBL_score"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/margin_text"
+        android:layout_marginTop="@dimen/margin_text_top"
+        android:text="@string/Initial_distance"
+        android:textSize="@dimen/text_size"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"/>
+
+
 
 </RelativeLayout>
     <!-- The role of contentDescription is to allow visually impaired owners to know what the button's function is -->
