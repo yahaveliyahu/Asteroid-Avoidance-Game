@@ -25,7 +25,7 @@ An Android game where the player controls a rocket moving between five lanes, tr
 
 ## 🎮 Watch the Game in Action
 
-▶️ [Click to watch](gameplay%20video.mp4)
+▶️ [Click here to watch the video](https://raw.githubusercontent.com/yahavveliyahu/Asteroid-Avoidance-Game/master/gameplay%20video.mp4)
 
 ---
 
