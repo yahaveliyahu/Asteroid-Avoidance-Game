@@ -25,7 +25,7 @@ An Android game where the player controls a rocket moving between five lanes, tr
 
 ## 🎮 Watch the Game in Action
 
-▶️ [Click here to watch the video]([צפה בסרטון ההסבר](https://www.youtube.com/watch?v=<youtube-video-id>))
+▶️ [Click here to watch the video](https://img.youtube.com/vi/Zi9DRx0wKAg/0.jpg)](https://youtu.be/Zi9DRx0wKAg))
 
 ---
 
